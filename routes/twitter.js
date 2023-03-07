@@ -1,9 +1,11 @@
 import express from "express";
 import Twitter from "twitter";
+import passport from "passport";
 import { nanoid } from "nanoid";
 import validUrl from "valid-url";
 import { auth } from "../middleware/auth.js";
 
+import Twit from 'twit';
 import { client } from "../index.js";
 // import {
 //   createNewUrl,
@@ -14,38 +16,18 @@ import { client } from "../index.js";
 
 const router = express.Router();
 
-//shorturl generator api
+// const TwitterStrategy = require('passport-twitter').Strategy;
+// //shorturl generator api
 // router.post("/", async (req, res) => {
-//   try {
-//     const fullurl = req.body.fullurl;
-//     console.log(fullurl);
-//     if (validUrl.isUri(fullurl)) {
-//       console.log("Looks like an URI");
-//       const urlId = nanoid();
-//       console.log(urlId);
-//       // const shortUrl = process.env.BASE+'/'+urlId;
-//       const shortUrl = urlId;
-//       const date = Date();
-//       console.log(shortUrl);
-//       const newurl = {
-//         fullurl: req.body.fullurl,
-//         shorturl: shortUrl,
-//         date: date,
-//       };
-//       const result = await createNewUrl(newurl);
-//       console.log(result);
-//       const createdurl="https://url-shortern.onrender.com/"+shortUrl;
-//       res.status(200).send(createdurl);
-//     } else {
-//       console.log("Not a URI");
-//       res.send({ message: "Not a URI" });
-//     }
-//   } catch (error) {
-//     res.status(400).send({ message: error.message });
-//   }
+//   const client = new Twitter({
+//     consumer_key: '',
+//     consumer_secret: '',
+//     access_token_key: '',
+//     access_token_secret: ''
+//   });
 // });
 
-// API for dashboard
+// // API for dashboard
 // router.get("/dashboard", async (req, res) => {
 //   try {
 //     console.log("This is dshboard API");
@@ -79,4 +61,16 @@ const router = express.Router();
 //   }
 // });
 
+//start1
+
+//end1
+
+
+
+
+
+
+
 export const twitterRouter = router;
+
+
