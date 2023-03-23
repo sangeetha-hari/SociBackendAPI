@@ -66,3 +66,29 @@ export async function genUserByEmail(name) {
 //   const result = await client.db("SocialMedia").collection("url_short").find({date:{$regex : month}}).toArray();
 //   return result;
 // }
+//-------------------------FB User DB-----------------------------------
+
+export async function getFBUserByUserID(userID) {
+  console.log("this is in getFBUserByUserID function");
+  const result = await client.db("SocialMedia").collection("fbdb").findOne({ userID: userID });
+  return (result);
+}
+
+export async function createNewFBuser(newFBacc){
+  console.log("this is FBinsert function");
+  console.log(newFBacc);
+  const result= await client.db("SocialMedia").collection("fbdb").insertOne(newFBacc);
+  return result;
+}
+
+export async function UpdateFBPageDetails(userID,page_ID,pageAccess_token) {
+  console.log("this is update function");
+  const result= await client.db("SocialMedia").collection("fbdb").updateOne({userID:userID},{$set:{page_ID:page_ID,pageAccess_token:pageAccess_token}});
+  return (result);
+}
+
+export async function getFBPageDetail(userID) {
+  console.log("this is in getFBPageDetail function");
+  const result = await client.db("SocialMedia").collection("fbdb").findOne({ userID: userID });
+  return (result);
+}
