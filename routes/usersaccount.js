@@ -185,7 +185,7 @@ router.post("/login",  async (req, res) => {
 
         res
           .status(200)
-          .send({ message: "successfull login", jwttoken: jwttoken, username:user.userFname });
+          .send({ message: "successfull login", jwttoken: jwttoken, username:user.userFname, email:req.body.email});
       }
     } else {
       res.status(400).send({ message: "User not registered" });
