@@ -40,6 +40,7 @@ router.get('/me', async(req, res) => {
         else{
           const newFBacc = {
             username: req.body.username,
+            useremail:req.body.useremail,
             userID: req.body.userID,
             userAccess_token: req.body.userAccess_token,
             page_ID: "",
